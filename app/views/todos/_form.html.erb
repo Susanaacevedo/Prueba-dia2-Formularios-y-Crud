@@ -1,0 +1,9 @@
+<h1>Edit TODO<h1/>
+
+<%= form_with model: @todo, local: true do |t| %>
+  <div clasas="form-group">
+   <%= t.label :description, "Description" %>
+   <%= t.text_field :description, class: 'form-control', placeholder: 'Ej:' %>
+  </div>
+  <%= t.submit "agregar tarea", class: 'btn btn-primary'%>
+<% end %>

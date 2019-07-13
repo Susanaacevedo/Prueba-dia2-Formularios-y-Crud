@@ -1,0 +1,11 @@
+
+   <h1>Descripcion</h1>
+   <%= @todo.description%>
+   <br>
+   <p>Se realizo la accion????</p>
+   <br>
+   <% if @todo.completed == true %>
+    <label> Realizado</label>
+   <% else%>
+    <label> Pendiente</label>
+   <% end %>

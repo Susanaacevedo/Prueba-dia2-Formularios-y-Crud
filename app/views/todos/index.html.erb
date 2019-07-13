@@ -1,0 +1,30 @@
+
+<!-- boton para ir al formulario-->
+<%= link_to "agregar nueva tarea", todos_new_path, class: 'btn btn_success float-right' %>
+
+<h1 class="text-center m-5">Bienvenido a la ToDo! app Organizate!</h1>
+<%= link_to "listado de formulario", todo_list_path,class: 'btn btn-info'%>
+
+<% @todos.each do |task|%>
+
+ <div class="card card-body bg-light m-4">
+   <div class="container text-center">
+     <%=task.description %>
+
+     <%= link_to "Ver tarea", task, class: 'btn btn-info '%>
+     <%= link_to "Editar tarea", todo_edit_path(task), class: 'btn btn-success '%>
+     <%= link_to "Eliminar", task, method: :delete, class: 'btn btn-danger '%>
+   </div>
+   <br>
+   <div class="container text-center">
+ <% if task.completed == true %>
+  <label class=""> Realizado</label>
+ <% else%>
+ <label class=""> Pendiente</label>
+  <% end %>
+
+    <%= link_to "Tarea realizado", tarea_completa_path(task), class: 'btn btn-info'%>
+  </div>
+</div>
+
+<% end %>
